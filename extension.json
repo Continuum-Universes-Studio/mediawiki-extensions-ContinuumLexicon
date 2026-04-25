@@ -1,0 +1,67 @@
+{
+  "name": "ContinuumLexicon",
+  "author": [
+    "Christian Daniel Jensen"
+  ],
+  "version": "0.1.0",
+  "license-name": "GPL-3.0-or-later",
+  "descriptionmsg": "continuumlexicon-desc",
+  "manifest_version": 2,
+  "type": "specialpage",
+  "requires": {
+    "MediaWiki": ">= 1.45.0"
+  },
+  "AutoloadNamespaces": {
+    "ContinuumUniverses\\Lexicon\\": "includes/"
+  },
+  "MessagesDirs": {
+    "ContinuumLexicon": [
+      "i18n"
+    ]
+  },
+  "ExtensionMessagesFiles": {
+    "ContinuumLexiconAliases": "ContinuumLexicon.i18n.alias.php"
+  },
+  "SpecialPages": {
+    "Lexicon": "ContinuumUniverses\\Lexicon\\SpecialLexicon",
+    "Languages": "ContinuumUniverses\\Lexicon\\SpecialLanguages",
+    "LexiconEdit": "ContinuumUniverses\\Lexicon\\SpecialLexiconEdit"
+  },
+  "APIModules": {
+    "continuumlexiconimport": "ContinuumUniverses\\Lexicon\\ApiContinuumLexiconImport"
+  },
+  "Hooks": {
+    "LoadExtensionSchemaUpdates": "ContinuumUniverses\\Lexicon\\Hooks::onLoadExtensionSchemaUpdates"
+  },
+  "AvailableRights": [
+    "continuumlexicon-view",
+    "continuumlexicon-edit",
+    "continuumlanguages-edit",
+    "continuumlexicon-import"
+  ],
+  "GroupPermissions": {
+    "*": {
+      "continuumlexicon-view": true
+    },
+    "sysop": {
+      "continuumlexicon-edit": true,
+      "continuumlanguages-edit": true,
+      "continuumlexicon-import": true
+    },
+    "grand-forgemaster": {
+      "continuumlexicon-edit": true,
+      "continuumlanguages-edit": true,
+      "continuumlexicon-import": true
+    },
+    "loremaster-supreme": {
+      "continuumlexicon-edit": true,
+      "continuumlanguages-edit": true,
+      "continuumlexicon-import": true
+    }
+  },
+  "config": {
+    "ContinuumLexiconDefaultLimit": {
+      "value": 100
+    }
+  }
+}
